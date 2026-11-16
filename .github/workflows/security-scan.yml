@@ -3,9 +3,14 @@ name: Container Security Scan
 # Trigger: scan otomatis pada push dan pull request
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: ["main", "develop"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
 
 jobs:
   build-and-scan:
